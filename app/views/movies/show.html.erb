@@ -6,21 +6,24 @@
 
     <div>
       <div>
-        <a href="<%= movies_path %>">
+        <%= link_to "Go back", movies_path %>
+        <!--<a href="<%#= movies_path %>">
           Go back
-        </a>
+        </a>-->
       </div>
 
       <div>
-        <a href="<%= edit_movie_path(@the_movie) %>">
+      <%= link_to "Edit movie", edit_movie_path(@the_movie) %>
+        <!--<a href="<%#= edit_movie_path(@the_movie) %>">
           Edit movie
-        </a>
+        </a>-->
       </div>
 
       <div>
-        <a href="movie_path(@the_movie) %>" data-turbo-method="delete">
+      <%= link_to "Delete movie", movie_path(@the_movie), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+        <!--<a href="movie_path(@the_movie) %>" data-turbo-method="delete">
           Delete movie
-        </a>
+        </a>-->
       </div>
     </div>
 
