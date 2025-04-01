@@ -2,7 +2,8 @@ class MoviesController < ApplicationController
   def new
     @the_movie = Movie.new
 
-    render template: "movies/new"
+    # render template: "movies/new"
+    # render "movies/new" -- if the controller name is matching the view folder and the action is matching with the view file name.
   end
 
   def index
@@ -15,9 +16,10 @@ class MoviesController < ApplicationController
         render json: @list_of_movies
       end
 
-      format.html do
-        render template: "movies/index" 
-      end
+      format.html
+      # format.html do
+      #   render template: "movies/index" 
+      # end
     end
   end
 
@@ -28,7 +30,8 @@ class MoviesController < ApplicationController
 
     @the_movie = matching_movies.first
 
-    render template: "movies/show" 
+    # render template: "movies/show" 
+     # render "movies/show" 
   end
 
   def create
@@ -40,7 +43,8 @@ class MoviesController < ApplicationController
       @the_movie.save
       redirect_to movies_url, notice: "Movie was successfully created." 
     else
-      render template: "movies/new"
+      render "new"
+      # render template: "movies/new"
     end
   end
 
@@ -51,7 +55,7 @@ class MoviesController < ApplicationController
 
     @the_movie = matching_movies.first
 
-    render template: "movies/edit"
+    # render template: "movies/edit"
   end
 
   def update
