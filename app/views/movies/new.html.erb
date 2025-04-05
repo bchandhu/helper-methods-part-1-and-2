@@ -10,13 +10,13 @@
     <%= label_tag :title %>
 
     <!--<input type="text" id="title" name="title" value="<%#= @movie.title %>">-->
-    <%= text_field_tag :title, @movie.title %>
+    <%= text_field_tag "movie[title]", @movie.title %>
   </div>
 
   <div>
     <%= label_tag :description %>
 
-    <%= text_area_tag :description, @movie.description, rows: 3 %>
+    <%= text_area_tag "movie[description]", @movie.description, rows: 3 %>
   </div>
 
   <!--<button>Create Movie</button>-->
