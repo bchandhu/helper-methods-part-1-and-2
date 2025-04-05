@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "movies#index"
 
   # Routes for the Movie resource:
+  # resources :movies
 
   # CREATE
   post "/movies" => "movies#create", as: :movies # movies_url and movies_path
